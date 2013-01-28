@@ -1,0 +1,53 @@
+Templates
+=========
+
+
+Récupérer des views parameters
+------------------------------
+    {% app.request.attributes.get( 'viewParameters' ).offset %}
+
+Nom d'un contenu
+----------------
+    {% content.contentInfo.name %}
+
+Récupérer un FieldType
+----------------------
+    {% content.getField( 'url' ).value.link %}
+    
+Rendu d'un FieldType
+--------------------
+
+    {{ ez_render_field( <content>, <field_name>, { 
+                'template': 'eZDemoBundle:fields:fields.html.twig',
+                'lang': 'eng-GB' 
+                } ) }}
+
+Rendu d'une image avec variations
+---------------------------------
+    {{ ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri }}
+
+Rendu de contenu type "ESI"
+---------------------------
+
+     {% render "ez_content:viewLocation" with { "locationId": 123, "viewMode": "line" }, {standalone: true} %}
+
+=> *ez_content* : service défini dans service.yml
+
+Etendre viewbaseLayout
+----------------------
+
+    {% extends viewbaseLayout %}
+
+=> *eZ/Bundle/EzPublishCoreBundle/Resources/views/viewbase_layout.html.twig*
+
+Chemin vers module legacy
+-------------------------
+
+    {{ path( 'ez_legacy', { 'module_uri': 'my_modyle/my_view/(param1)/value1' } ) }}
+
+
+Lien vers un contenu
+--------------------
+    {{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+
+
