@@ -24,7 +24,9 @@ Rendu d'un FieldType
 
 Rendu d'une image avec variations
 ---------------------------------
-    {{ ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri }}
+   <img src="{{assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
+ ou   
+   {{ez_render_field(content, 'image', {parameters:{alias:'small'},                                        attr:{class:'maClasse',                                              custom_attribute:'value'}                                        })}}
 
 Rendu de contenu type "ESI"
 ---------------------------
@@ -32,6 +34,8 @@ Rendu de contenu type "ESI"
      {% render "ez_content:viewLocation" with { "locationId": 123, "viewMode": "line" }, {standalone: true} %}
 
 => *ez_content* : service défini dans service.yml
+
+=> attention, pour l'utilisation avec Varnish des ESI, il ne faut surtout pas charger EzPublishCache dans le index.php car sinon, Symfony va simuler un reverse-proxy et ne renverra pas des bloc ESI. 
 
 Etendre viewbaseLayout
 ----------------------
