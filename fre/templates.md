@@ -24,9 +24,13 @@ Rendu d'un FieldType
 
 Rendu d'une image avec variations
 ---------------------------------
-   <img src="{{assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
- ou   
-   {{ez_render_field(content, 'image', {parameters:{alias:'small'},                                        attr:{class:'maClasse',                                              custom_attribute:'value'}                                        })}}
+    <img src="{{assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
+ou   
+
+    {{ez_render_field(content, 'image', {parameters:{alias:'small'},
+    	attr:{class:'maClasse',
+        custom_attribute:'value'}
+    })}}
 
 Rendu de contenu type "ESI"
 ---------------------------
