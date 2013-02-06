@@ -4,9 +4,9 @@ Commandes utiles
 Vider les caches symphony
 -------------------------
 
-php ezpublish/console cache:clear
+    php ezpublish/console cache:clear
 
 Créer un nouveau bundle
 -----------------------
 
-php ezpublish/console generate:bundle
+    php ezpublish/console generate:bundle
