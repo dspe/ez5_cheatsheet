@@ -59,3 +59,11 @@ Lien vers un contenu
     {{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
 
 
+Connaître si l'utilisateur est connecté ou non
+----------------------------------------------
+    {% if app.security.token.authenticated %}
+    ... 
+    {% else %}
+    ...
+    {% endif %}
+
