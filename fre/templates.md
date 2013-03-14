@@ -4,15 +4,15 @@ Templates
 
 Récupérer des views parameters
 ------------------------------
-    {% app.request.attributes.get( 'viewParameters' ).offset %}
+    {{ app.request.attributes.get( 'viewParameters' ).offset }}
 
 Nom d'un contenu
 ----------------
-    {% content.contentInfo.name %}
+    {{ content.contentInfo.name }}
 
 Récupérer un FieldType
 ----------------------
-    {% content.getField( 'url' ).value.link %}
+    {{ content.getField( 'url' ).value.link }}
     
 Rendu d'un FieldType
 --------------------
@@ -24,7 +24,7 @@ Rendu d'un FieldType
 
 Rendu d'une image avec variations
 ---------------------------------
-    <img src="{{assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
+    <img src="{{ assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
 ou   
 
     {{ez_render_field(content, 'image', {parameters:{alias:'small'},
