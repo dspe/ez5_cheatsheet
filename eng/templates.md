@@ -24,7 +24,7 @@ Render a FieldType
 
 Render an image with variations
 -------------------------------
-    <img src="{{ assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
+    <img src="{{ asset(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
 or
 
     {{ez_render_field(content, 'image', {parameters:{alias:'small'},
