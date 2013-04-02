@@ -24,7 +24,7 @@ Rendu d'un FieldType
 
 Rendu d'une image avec variations
 ---------------------------------
-    <img src="{{ assets(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
+    <img src="{{ asset(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }}>      
 ou   
 
     {{ez_render_field(content, 'image', {parameters:{alias:'small'},
@@ -56,7 +56,18 @@ Chemin vers module legacy
 
 Lien vers un contenu
 --------------------
-    {{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+Relatif
+
+	{{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	ou
+	{{ path( location_object ) }}
+	
+Absolu
+	
+	{{ url( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	ou
+	{{ url( location_object ) }}
+
 
 
 Connaître si l'utilisateur est connecté ou non
