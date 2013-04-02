@@ -54,10 +54,19 @@ Url to legacy module/view
     {{ path( 'ez_legacy', { 'module_uri': 'my_modyle/my_view/(param1)/value1' } ) }}
 
 
-Link to an content
+Link to content
 ------------------
-    {{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+Relative
 
+	{{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	or
+	{{ path( location_object ) }}
+	
+Absolute
+	
+	{{ url( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	or
+	{{ url( location_object ) }}
 
 How to know if an user is connected or not
 ------------------------------------------

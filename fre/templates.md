@@ -56,7 +56,18 @@ Chemin vers module legacy
 
 Lien vers un contenu
 --------------------
-    {{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+Relatif
+
+	{{ path( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	ou
+	{{ path( location_object ) }}
+	
+Absolu
+	
+	{{ url( 'ez_urlalias', {'locationId': content.contentInfo.mainLocationId} ) }}
+	ou
+	{{ url( location_object ) }}
+
 
 
 Connaître si l'utilisateur est connecté ou non
