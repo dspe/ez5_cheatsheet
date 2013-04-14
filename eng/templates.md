@@ -32,6 +32,10 @@ or
         custom_attribute:'value'}
     })}}
 
+Render ezbinaryfile download link with nice file name
+-------------------------------
+	<a href="{{ 'content/download/' ~ <content>.contentInfo.id ~ '/' ~ <field>.id ~ '/version/' ~ <content>.contentInfo.currentVersionNo ~  "/file/" ~ <field>.value.fileName|escape( 'url' ) }}"/>{{ <field>.value.fileName }}</a>
+
 Render a content type via "ESI"
 -------------------------------
 
