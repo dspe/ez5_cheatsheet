@@ -24,6 +24,9 @@ Controller used to render content/location
 Differents configuration files
 ------------------------------
 
-**ezpublish/config/ezpublish.yml** declare siteaccess, database configuration,  image_alias, use directly legacy or not, etc...
+**ezpublish/config/ezpublish.yml** defines the siteaccess, the database
+configuration, the image\_alias, set whether to directly use the legacy or not,
+etc...
 
-**ezpublish/config/parameters.yml** (include via config.yml) contains path for pagelayout (ezpublish_legacy.view.default_layout)
+**ezpublish/config/parameters.yml** (included in config.yml) contains the path
+to the pagelayout (ezpublish\_legacy.view.default\_layout)
