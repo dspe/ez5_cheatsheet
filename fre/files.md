@@ -24,6 +24,10 @@ Le contrôleur de la vue content/location
 La configuration des settings dans EZ5
 --------------------------------------
 
-**ezpublish/config/ezpublish.yml** contient la déclaration des siteaccess, la configuration de la base de données,  image_alias, l'activation ou non du mode legacy, etc...
+**ezpublish/config/ezpublish.yml** contient la déclaration des siteaccess, la
+configuration de la base de données,  image\_alias, l'activation ou non du mode
+legacy, etc...
 
-**ezpublish/config/parameters.yml** (ce fichier étant inclut dans config.yml) contient le path de la pagelayout par défaut (ezpublish_legacy.view.default_layout)
+**ezpublish/config/parameters.yml** (ce fichier étant inclut dans config.yml)
+contient le path de la pagelayout par défaut
+(`ezpublish\_legacy.view.default\_layout`)
