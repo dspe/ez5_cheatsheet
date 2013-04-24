@@ -58,12 +58,21 @@ Render a content type via "ESI"
 -------------------------------
 
 ```jinja
- {% render "ez_content:viewLocation" with { "locationId": 123, "viewMode": "line" }, {standalone: true} %}
+ {{ render( controller( "ez_content:viewLocation" with { "locationId": 123, "viewMode": "line" }, {"strategy": "esi"} ) }}
 ```
 
 => *ez_content* : service definied in service.yml
 
 => To use Varnish, don't forget to remove EzPublishCache from index.php
+
+Render a content type via Asynchronous method
+---------------------------------------------
+
+```jinja
+ {{ render( controller( "ez_content:viewLocation" with { "locationId": 123, "viewMode": "line" }, {"strategy": "hinclude"} ) }}
+```
+
+=> Don't forget to add hinclude.js (http://mnot.github.io/hinclude/)
 
 Extends viewbaseLayout
 ----------------------
