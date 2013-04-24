@@ -32,13 +32,15 @@ Render a FieldType
 Render an image with variations
 -------------------------------
 ```jinja
-<img src="{{ asset(ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri) }} alt="{{  <field>.value.alternativeText }}">
+<img src="{{ asset( ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri ) }} alt="{{  <field>.value.alternativeText }}">
 or
 
-{{ez_render_field(content, 'image', {parameters:{alias:'small'},
-    attr:{class:'maClasse',
-    custom_attribute:'value'}
-})}}
+{{ ez_render_field(content, 'image', { 
+                                        parameters:{ alias:'small' },
+    									attr:{ class:'maClasse', custom_attribute:'value' }
+									 }
+				  )
+}}
 ```
 
 Render ezbinaryfile download link with nice file name
