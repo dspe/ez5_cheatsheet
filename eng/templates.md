@@ -120,3 +120,32 @@ How to know if an user is authenticated
 {% endif %}
 ```
 
+Twig Helper
+-----------
+
+Some parameters could help you directly on templates
+
+```
+ezpublish.siteaccess
+ezpublish.requestedUriString
+ezpublish.systemUriString
+ezpublish.viewParameters
+ezpublish.viewParametersString
+ezpublish.siteName
+ezpublish.legacy
+```
+About the legacy …
+
+```
+ezpublish.legacy.all
+ezpublish.legacy.keys
+ezpublish.legacy.get
+ezpublish.legacy.has
+```
+
+Template inclusion legacy template
+----------------------------------
+
+```jinga
+{% include "design:my/old_template.tpl" with {"someVar": "someValue"} %}
+```
