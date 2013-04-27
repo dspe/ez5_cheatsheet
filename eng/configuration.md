@@ -25,6 +25,27 @@ Base layout for legacy fallback
         ezpublish_legacy.my_siteaccess.module_default_layout: AcmeDemoBundle::layout_legacy.html.twig
 ```
 
+
+Multisite with single repository
+================================
+
+```yml
+ezpublish:
+    system:
+        my_siteaccess:
+            content:
+                tree_root:
+                    # Root locationId. Default is top locationId
+                    location_id: 123
+                    # Every URL aliases starting with those prefixes will be considered 
+                    # being outside of the subtree starting at root_location.
+                    # Default value is an empty array.
+                    # Prefixes are not case sensitive.
+                    excluded_uri_prefixes:
+                        - media
+                        - users
+```
+
 Siteaccess matching: matchers
 =============================
 
