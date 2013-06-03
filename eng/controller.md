@@ -26,3 +26,10 @@ foreach ( $currentLocationChildren->locations as $childLocation )
     $childrenLocatinoId[] = $childLocation->contentInfo->mainLocationId;
 }
 ```
+
+Check if a user is authenticated
+===================
+```php
+$securityToken = $this->container->get('security.context')->getToken();
+$userAuth = $securityToken->isAuthenticated(); // return true or false
+```
