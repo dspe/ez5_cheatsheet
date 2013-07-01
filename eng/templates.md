@@ -60,7 +60,7 @@ Render a content type via "ESI"
 -------------------------------
 
 ```jinja
- {{ render( controller( "ez_content:viewLocation", { "locationId": 123, "viewMode": "line" }, {"strategy": "esi"} ) }}
+ {{ render( controller( "ez_content:viewLocation", { "locationId": 123, "viewType": "line" }, {"strategy": "esi"} )) }}
 ```
 
 => *ez_content* : service definied in service.yml
@@ -71,7 +71,7 @@ Render a content type via Asynchronous method
 ---------------------------------------------
 
 ```jinja
- {{ render( controller( "ez_content:viewLocation", { "locationId": 123, "viewMode": "line" }, {"strategy": "hinclude"} ) }}
+ {{ render( controller( "ez_content:viewLocation", { "locationId": 123, "viewType": "line" }, {"strategy": "hinclude"} )) }}
 ```
 
 => Don't forget to add hinclude.js (http://mnot.github.io/hinclude/)
