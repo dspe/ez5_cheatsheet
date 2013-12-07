@@ -32,7 +32,7 @@ Render a FieldType
 Render an image with variations
 -------------------------------
 ```jinja
-<img src="{{ asset( ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri ) }} alt="{{  <field>.value.alternativeText }}">
+<img src="{{ asset( ez_image_alias( <field>, <versionInfo>, <parameter_alias> ).uri ) }}" alt="{{  <field>.value.alternativeText }}">
 or
 
 {{ ez_render_field(content, 'image', { 
