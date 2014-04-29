@@ -19,3 +19,4 @@ Get configuration from your siteaccess
 ```php
 $configResolver = $this->container->get( 'ezpublish.config.resolver' );
 $rootLocationId = $configResolver->getParameter( 'content.tree_root.location_id' );
+```
