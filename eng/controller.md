@@ -29,7 +29,18 @@ foreach ( $currentLocationChildren->locations as $childLocation )
 
 Check if a user is authenticated
 ===================
+
 ```php
 $securityToken = $this->container->get('security.context')->getToken();
 $userAuth = $securityToken->isAuthenticated(); // return true or false
 ```
+
+Transform Symfony locale to eZ Publish
+===================
+
+```php
+$symfonyLocale = $this->getRequest()->get( '_locale' );
+$localeConverter = $this->container->get( 'ezpublish.locale.converter' );
+$ezLocale = $ezLocale = $localeConverter->convertToEz( $symfonyLocale );
+```
+

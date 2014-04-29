@@ -12,3 +12,10 @@ $Result['content'] = $controller->myAdminAction( 'blabla' )->getContent();
 ```
 
 More informations is on: https://gist.github.com/lolautruche/5694727
+
+Get configuration from your siteaccess
+======================================
+
+```php
+$configResolver = $this->container->get( 'ezpublish.config.resolver' );
+$rootLocationId = $configResolver->getParameter( 'content.tree_root.location_id' );

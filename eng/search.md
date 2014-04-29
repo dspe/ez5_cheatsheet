@@ -1,7 +1,13 @@
-Basic syntax:
-=============
+Content search:
+==============
 
 ```php
+
+use eZ\Publish\API\Repository\Values\Content\Query;
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
+
+// ...
+
 $searchService = $this->getRepository()->getSearchService();
 
 $query = new Query();
@@ -18,6 +24,34 @@ $query->offset = 0;
 
 $searchService->findContent($query);
 ```
+
+Location Search:
+================
+
+```php
+
+use eZ\Publish\API\Repository\Values\Content\LocationQuery;
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Location;
+
+// ...
+
+$searchService = $this->getRepository()->getSearchService();
+
+$query = new LocationQuery();
+
+        $query->criterion = new Criterion\LogicalAnd(
+            array(
+                new Location\ParentLocationId( 2 ),
+                new Criterion\ContentTypeIdentifier( array( "folder", "blog", "landing_page" ) )
+            )
+        );
+
+        $searchResult = $this->getRepository()
+            ->getSearchService()
+            ->findLocations( $query );
+```
+
 
 Criterion Operators:
 ====================
@@ -100,6 +134,17 @@ new Criterion\LocationRemoteId(
         'f3e90596361e31d496d4026eb624c983'
     )
 );
+
+
+Location\Depth( $operator, $value );
+Location\Id( $value );
+Location\IsMainLocation( IsMainLocation::MAIN|IsMainLocation::NOT_MAIN );
+Location\ParentLocationId( int|int[] );
+Location\Priority( $operator, $value );
+Location\RemoteId( $value );
+Location\SubTree( string|string[] );
+Location\Visibility( Visibility::VISIBLE|Visibility::HIDDEN );
+
 ```
 
 Sort Clauses:
